@@ -1,0 +1,18 @@
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-content {
+    text-align: center;
+}
+
+#larger-text {
+    font-size: 7vmin;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
