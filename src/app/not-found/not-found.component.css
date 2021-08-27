@@ -1,5 +1,6 @@
 * {
     font-family: 'Roboto', sans-serif;
+    overflow-y: hidden;
 }
 
 .container {
@@ -10,9 +11,9 @@
 }
 
 .page-content {
-    text-align: center;
+    justify-content: center;
 }
 
-.not-found-image {
-    width: 500px;
+.text {
+    font-size: 4vmin;
 }
