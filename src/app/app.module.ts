@@ -10,6 +10,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ExtraSearchComponent } from './extra-search/extra-search.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RepoComponent } from './repo/repo.component';
+import { FollowersComponent } from './followers/followers.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RepoComponent } from './repo/repo.component';
     NotFoundComponent,
     ExtraSearchComponent,
     ProfileComponent,
-    RepoComponent
+    RepoComponent,
+    FollowersComponent
   ],
   imports: [
     BrowserModule,
