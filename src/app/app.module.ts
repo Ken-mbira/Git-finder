@@ -11,6 +11,7 @@ import { ExtraSearchComponent } from './extra-search/extra-search.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RepoComponent } from './repo/repo.component';
 import { FollowersComponent } from './followers/followers.component';
+import { FollowingComponent } from './following/following.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FollowersComponent } from './followers/followers.component';
     ExtraSearchComponent,
     ProfileComponent,
     RepoComponent,
-    FollowersComponent
+    FollowersComponent,
+    FollowingComponent
   ],
   imports: [
     BrowserModule,

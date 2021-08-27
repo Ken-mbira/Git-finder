@@ -1,0 +1,7 @@
+.card div {
+    display: flex;
+}
+
+.card div div {
+    margin-right: 1rem;
+}
