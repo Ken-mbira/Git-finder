@@ -7,6 +7,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { FooterComponent } from './footer/footer.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ExtraSearchComponent } from './extra-search/extra-search.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     LandingPageComponent,
     FooterComponent,
     SearchPageComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ExtraSearchComponent
   ],
   imports: [
     BrowserModule,
