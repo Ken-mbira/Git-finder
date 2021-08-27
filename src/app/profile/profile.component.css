@@ -1,0 +1,24 @@
+.container {
+    margin-top: 1rem;
+}
+
+.card {
+    text-align: center;
+}
+
+.user-info {
+    text-align: left;
+}
+
+.detail-category {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 0.5rem;
+}
+
+.profile-details {
+    margin-top: 1rem;
+    border: solid black 1px;
+    border-radius: 3px;
+    height: fit-content;
+}

@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ExtraSearchComponent } from './extra-search/extra-search.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ExtraSearchComponent } from './extra-search/extra-search.component';
     FooterComponent,
     SearchPageComponent,
     NotFoundComponent,
-    ExtraSearchComponent
+    ExtraSearchComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

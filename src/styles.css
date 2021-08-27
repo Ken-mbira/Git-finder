@@ -1,4 +1,7 @@
-@import "~bootstrap/dist/css/bootstrap.css";
 * {
     font-family: 'Roboto', sans-serif;
+}
+
+* ul {
+    list-style-type: none;
 }
