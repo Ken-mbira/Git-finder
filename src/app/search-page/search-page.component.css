@@ -1,0 +1,23 @@
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-content {
+    text-align: center;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group img {
+    max-width: 50px;
+    max-height: 50px;
+}
