@@ -2,6 +2,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+footer {
+    margin-top: 1rem;
+}
+
 .container {
     display: flex;
     justify-content: center;
