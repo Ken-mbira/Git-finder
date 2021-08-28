@@ -1,6 +1,6 @@
 <app-extra-search></app-extra-search>
 <div class="container">
-    <div class="page-content">
+    <div class="page-content" *ngFor="let item of profile; let i = index">
         <div class="card">
             <div class="profile-pic">
                 <img src="../../assets/sad icon.png" alt="user pic">
@@ -8,22 +8,24 @@
             <div class="user-info" style="font-size: 3vmin;">
                 <ul>
                     <li>
-                        <p><strong>Username:</strong></p>
+                        <p><strong>{{item.userName}}</strong></p>
                     </li>
                     <li>
-                        <p><strong>Bio:</strong></p>
+                        <p><strong>{{item.bio}}</strong></p>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="profile-details">
             <div class="btn-group" style="width:100%">
-                <button class="btn btn-secondary">Repos <span class="badge badge-secondary">4</span></button>
-                <button class="btn btn-secondary">Followers <span class="badge badge-secondary">4</span></button>
-                <button class="btn btn-secondary">Following <span class="badge badge-secondary">4</span></button>
+                <button class="btn btn-secondary" (click)="showRepos(i)">Repos<span class="badge badge-secondary">{{item.repoNumber}}</span></button>
+                <button class="btn btn-secondary" (click)="showFollowers(i)">Followers <span class="badge badge-secondary">{{item.followers}}</span></button>
+                <button class="btn btn-secondary" (click)="showFollowing(i)">Following<span class="badge badge-secondary">{{item.following}}</span></button>
             </div>
             <hr>
-            <app-following></app-following>
+            <app-repo *ngIf="item.showRepo"></app-repo>
+            <app-followers *ngIf="item.showFollowers"></app-followers>
+            <app-following *ngIf="item.showFollowing"></app-following>
         </div>
     </div>
 </div>
