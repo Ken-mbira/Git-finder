@@ -9,7 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
 const routes: Routes = [
   { path: '', component: LandingPageComponent},
   { path: 'search', component: SearchPageComponent},
-  { path: 'landing', component: ProfileComponent},
+  { path: 'profile', component: ProfileComponent},
   { path: 'not-found', component: NotFoundComponent}
 ];
 

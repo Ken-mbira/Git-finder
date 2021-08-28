@@ -1,4 +1,5 @@
 <app-extra-search></app-extra-search>
+<app-not-found></app-not-found>
 <div class="container">
     <div class="page-content" *ngFor="let item of profile; let i = index">
         <div class="card">
@@ -18,9 +19,9 @@
         </div>
         <div class="profile-details">
             <div class="btn-group" style="width:100%">
-                <button class="btn btn-secondary" (click)="showRepos(i)">Repos<span class="badge badge-secondary">{{item.repoNumber}}</span></button>
-                <button class="btn btn-secondary" (click)="showFollowers(i)">Followers <span class="badge badge-secondary">{{item.followers}}</span></button>
-                <button class="btn btn-secondary" (click)="showFollowing(i)">Following<span class="badge badge-secondary">{{item.following}}</span></button>
+                <button class="btn btn-secondary" (click)="showRepos(i)">Repos<span class="badge">{{item.repoNumber}}</span></button>
+                <button class="btn btn-secondary" (click)="showFollowers(i)">Followers <span class="badge">{{item.followers}}</span></button>
+                <button class="btn btn-secondary" (click)="showFollowing(i)">Following<span class="badge">{{item.following}}</span></button>
             </div>
             <hr>
             <app-repo *ngIf="item.showRepo"></app-repo>
