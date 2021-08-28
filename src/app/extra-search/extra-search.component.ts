@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfileServiceService } from '../profile-http/profile-service.service';
 
 @Component({
   selector: 'app-extra-search',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExtraSearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(){
+  }
 
   ngOnInit(): void {
   }
