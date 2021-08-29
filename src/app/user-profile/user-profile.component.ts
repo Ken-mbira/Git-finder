@@ -39,7 +39,7 @@ export class UserProfileComponent implements OnInit {
           this.repoInfo[index].projectName = this.repoDetails[index].name;
           this.repoInfo[index].description = this.repoDetails[index].description;
           this.repoInfo[index].language = this.repoDetails[index].language;
-          this.repoInfo[index].link = this.repoDetails[index].url;
+          this.repoInfo[index].link = this.repoDetails[index].html_url;
           this.repoInfo[index].lastUpdated = this.repoDetails[index].updated_at;
           this.repoInfo.push(this.repoInfo[index])
         }
