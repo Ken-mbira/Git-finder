@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FollowingData } from '../following-data';
 
 @Component({
   selector: 'app-following',
@@ -7,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FollowingComponent implements OnInit {
 
+  @Input() followingInfo : FollowingData[] = [
+    // new FollowingData("","","")
+  ] 
   constructor() { }
 
   ngOnInit(): void {

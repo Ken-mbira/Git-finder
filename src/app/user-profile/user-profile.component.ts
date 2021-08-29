@@ -4,6 +4,7 @@ import { User } from '../user';
 import { Repository } from '../repository';
 import { ProfileServiceService } from '../profile-http/profile-service.service';
 import { FollowerData } from './../follower-data';
+import { FollowingData } from '../following-data';
 
 @Component({
   selector: 'app-user-profile',
@@ -23,6 +24,9 @@ export class UserProfileComponent implements OnInit {
   followerInfo: FollowerData[] = [
   ]
   followerDetails:any;
+
+  followingInfo: FollowingData[] = []
+  followingDetails:any;
 
   addNewUser(userInfo){
     this.profileService.userMaker(userInfo.userName)
@@ -58,6 +62,18 @@ export class UserProfileComponent implements OnInit {
           this.followerInfo[index].followerLink = this.followerDetails[index].html_url;
           this.followerInfo.push(this.followerInfo[index])
         }
+      })
+    this.profileService.followingMaker(userInfo.userName)
+      .subscribe(followingData=>{
+        this.followingDetails = followingData;
+        for (let index = 0; index < this.followingDetails.length; index++) { 
+          this.followingInfo[index] = new FollowingData("","","");
+          this.followingInfo[index].followingName = this.followingDetails[index].login;
+          this.followingInfo[index].followingPicture = this.followingDetails[index].avatar_url;
+          this.followingInfo[index].followingLink = this.followingDetails[index].html_url;
+          this.followerInfo.push(this.followerInfo[index])
+          console.log(this.followingInfo[index])
+        } 
       })
   }
   

@@ -26,7 +26,7 @@
             <hr>
             <app-repo *ngIf="profile.showRepo" [repoInfo]="repoInfo"></app-repo>
             <app-followers *ngIf="profile.showFollowers" [followerInfo]="followerInfo"></app-followers>
-            <app-following *ngIf="profile.showFollowing"></app-following>
+            <app-following *ngIf="profile.showFollowing" [followingInfo]="followingInfo"></app-following>
         </div>
     </div>
 </div>
