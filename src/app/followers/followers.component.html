@@ -1,10 +1,10 @@
-<div class="card" style="padding: 1rem;">
+<div class="card" style="padding: 1rem;" *ngFor="let item of followerInfo; let i = index">
     <div>
         <div>
-            <img src="../../assets/search icon.png" width="50px">
+            <img src={{item.followerPicture}} width="50px">
         </div>
         <div>
-            <p class="card-text">Name of follower</p>
+            <p class="card-text">{{item.followerName}}</p>
         </div>
     </div>
 </div>

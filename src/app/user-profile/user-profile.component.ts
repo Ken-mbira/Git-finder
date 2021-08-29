@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { Repository } from '../repository';
 import { ProfileServiceService } from '../profile-http/profile-service.service';
+import { FollowerData } from './../follower-data';
 
 @Component({
   selector: 'app-user-profile',
@@ -19,6 +20,10 @@ export class UserProfileComponent implements OnInit {
   ];
   repoDetails:any;
 
+  followerInfo: FollowerData[] = [
+  ]
+  followerDetails:any;
+
   addNewUser(userInfo){
     this.profileService.userMaker(userInfo.userName)
       .subscribe(userData=>{
@@ -29,7 +34,6 @@ export class UserProfileComponent implements OnInit {
         this.profile.followers = this.userDetails.followers;
         this.profile.following = this.userDetails.following;
         this.profile.repoNumber = this.userDetails.public_repos;
-        console.log(this.userDetails)
       })
     this.profileService.repoMaker(userInfo.userName)
       .subscribe(repoData=>{
@@ -42,6 +46,17 @@ export class UserProfileComponent implements OnInit {
           this.repoInfo[index].link = this.repoDetails[index].html_url;
           this.repoInfo[index].lastUpdated = this.repoDetails[index].updated_at;
           this.repoInfo.push(this.repoInfo[index])
+        }
+      })
+    this.profileService.followerMaker(userInfo.userName)
+      .subscribe(followerData=>{
+        this.followerDetails = followerData;
+        for (let index = 0; index < this.followerDetails.length; index++) {
+          this.followerInfo[index] = new FollowerData("","","");
+          this.followerInfo[index].followerName = this.followerDetails[index].login;
+          this.followerInfo[index].followerPicture = this.followerDetails[index].avatar_url;
+          this.followerInfo[index].followerLink = this.followerDetails[index].html_url;
+          this.followerInfo.push(this.followerInfo[index])
         }
       })
   }
