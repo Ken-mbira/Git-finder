@@ -1,6 +1,6 @@
 <div class="container">
-    <app-extra-search></app-extra-search>
-    <app-not-found></app-not-found>
+    <app-extra-search [user]="profile" (submitted)='searchUser($event)'></app-extra-search>
+    <app-not-found *ngIf="!profile.found"></app-not-found>
     <div class="page-content">
         <div class="card">
             <div class="profile-pic">
@@ -19,14 +19,14 @@
         </div>
         <div class="profile-details">
             <div class="btn-group" style="width:100%">
-                <button class="btn btn-secondary">Repos<span class="badge"></span></button>
-                <button class="btn btn-secondary">Followers <span class="badge"></span></button>
-                <button class="btn btn-secondary">Following<span class="badge"></span></button>
+                <button class="btn btn-secondary" (click)="showRepos()">Repos<span class="badge"></span></button>
+                <button class="btn btn-secondary" (click)="showFollowers()">Followers <span class="badge"></span></button>
+                <button class="btn btn-secondary" (click)="showFollowing()">Following<span class="badge"></span></button>
             </div>
             <hr>
-            <app-repo></app-repo>
-            <app-followers></app-followers>
-            <app-following></app-following>
+            <app-repo *ngIf="profile.showRepo"></app-repo>
+            <app-followers *ngIf="profile.showFollowers"></app-followers>
+            <app-following *ngIf="profile.showFollowing"></app-following>
         </div>
     </div>
 </div>

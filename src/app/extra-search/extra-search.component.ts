@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ProfileServiceService } from '../profile-http/profile-service.service';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+import { User } from '../user';
 
 @Component({
   selector: 'app-extra-search',
@@ -8,6 +8,13 @@ import { ProfileServiceService } from '../profile-http/profile-service.service';
 })
 export class ExtraSearchComponent implements OnInit {
 
+  @Input() user = new User("");
+
+  @Output() submitted = new EventEmitter<boolean>();
+
+  startSearch(submit:boolean){
+    this.submitted.emit(submit)
+  }
   constructor(){
   }
 

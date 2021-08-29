@@ -1,0 +1,14 @@
+.card {
+    text-align: center;
+}
+
+.user-info {
+    text-align: left;
+}
+
+.profile-details {
+    border: solid black 1px;
+    border-radius: 3px;
+    text-align: center;
+    padding: 1rem;
+}
