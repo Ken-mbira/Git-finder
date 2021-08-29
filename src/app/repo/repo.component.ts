@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { User } from '../user';
+import { Component, OnInit } from '@angular/core';
+import { Repository } from '../repository';
+import { UserDetailsServiceService } from '../user-details-service.service';
 
 @Component({
   selector: 'app-repo',
@@ -8,8 +9,8 @@ import { User } from '../user';
 })
 export class RepoComponent implements OnInit {
 
-  @Input() details:User;
-  constructor() { }
+  repoInfo = new Repository("","","","",new Date())
+  constructor(userDetails: UserDetailsServiceService) { }
 
   ngOnInit(): void {
   }

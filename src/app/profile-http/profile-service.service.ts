@@ -14,6 +14,15 @@ export class ProfileServiceService {
   userMaker(userName){
     return this.http.get(`https://api.github.com/users/${userName}?access_token=${environment.apiKey}`)
   }
+  repoMaker(userName){
+    return this.http.get(`https://api.github.com/users/${userName}/repos?access_token=${environment.apiKey}`)
+  }
+  followerMaker(userName){
+    return this.http.get(`https://api.github.com/users/${userName}/followers?access_token=${environment.apiKey}`)
+  }
+  followingMaker(userName){
+    return this.http.get(`https://api.github.com/users/${userName}/following?access_token=${environment.apiKey}`)
+  }
 
 
 }

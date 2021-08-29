@@ -24,7 +24,7 @@
                 <button class="btn btn-secondary" (click)="showFollowing()">Following<span class="badge">{{profile.following}}</span></button>
             </div>
             <hr>
-            <app-repo *ngIf="profile.showRepo" [details]="profile"></app-repo>
+            <app-repo *ngIf="profile.showRepo"></app-repo>
             <app-followers *ngIf="profile.showFollowers"></app-followers>
             <app-following *ngIf="profile.showFollowing"></app-following>
         </div>
