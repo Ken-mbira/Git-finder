@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscriber } from 'rxjs';
 
 import { User } from '../user';
 import { ProfileServiceService } from './../profile-http/profile-service.service';
@@ -9,9 +10,22 @@ import { ProfileServiceService } from './../profile-http/profile-service.service
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  userName = {};
+  bio:any;
+  repoNumber:any;
+  followers:any;
+  following:any;
+  avatar:any;
+  found:true;
 
+  userMaker(){
+    this.profileService.userMaker()
+      .subscribe(userData=>{
+        this.userName = userData
+      })
+  }
   profile : User[] = [
-    new User("Ken Mbira", "blah blah blah", 1, 2, 1,"sdfadfasf")
+    new User("", "", 0, 0, 0,"")
   ];
 
   showRepos(index){
@@ -30,8 +44,9 @@ export class ProfileComponent implements OnInit {
     this.profile[index].showFollowing = true;
   }
 
-  constructor(){
+  constructor(private profileService:ProfileServiceService){
   }
+
 
   ngOnInit(): void {
   }

@@ -3,15 +3,20 @@ import { HttpClient} from '@angular/common/http';
 
 import { environment } from 'src/environments/environment';
 import { User } from '../user';
+import { ProfileComponent } from '../profile/profile.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfileServiceService {
-  profile : User;
+  userProfile: any;
+  username: string;
 
   constructor(private http:HttpClient) {
-    this.profile = new User("","",0,0,0,"");
+  }
+
+  userMaker(){
+    return this.http.get(`https://api.github.com/users/${this.username}/repos?access_token=${environment.apiKey}`)
   }
 
 
