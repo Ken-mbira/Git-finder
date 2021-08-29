@@ -14,6 +14,7 @@ import { RepoComponent } from './repo/repo.component';
 import { FollowersComponent } from './followers/followers.component';
 import { FollowingComponent } from './following/following.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     RepoComponent,
     FollowersComponent,
     FollowingComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

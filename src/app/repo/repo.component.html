@@ -1,4 +1,4 @@
-<div class="card" style="padding:1rem;" *ngFor="let item of repoInfo; let i = index">
+<div appHighlight class="card" style="padding:1rem;" *ngFor="let item of repoInfo; let i = index">
     <h5 class="card-title">{{item.projectName}}</h5>
     <p class="card-text">{{item.description}}</p>
     <p>Last updated:{{item.lastUpdated}}</p>
