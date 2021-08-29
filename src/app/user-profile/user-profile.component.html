@@ -1,30 +1,30 @@
 <div class="container">
-    <app-extra-search [user]="profile" (submitted)='searchUser($event)'></app-extra-search>
+    <app-extra-search (submitted)="addNewUser($event)"></app-extra-search>
     <app-not-found *ngIf="!profile.found"></app-not-found>
     <div class="page-content">
         <div class="card">
             <div class="profile-pic">
-                <img src="../../assets/sad icon.png" alt="user pic">
+                <img src={{profile.avatar}} alt="user pic" style="max-width: 200px;">
             </div>
             <div class="user-info" style="font-size: 3vmin;">
                 <ul>
                     <li>
-                        <p><strong></strong></p>
+                        <p><strong>Name: </strong>{{profile.userName}}</p>
                     </li>
                     <li>
-                        <p><strong></strong></p>
+                        <p><strong>Bio: </strong>{{profile.bio}}</p>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="profile-details">
             <div class="btn-group" style="width:100%">
-                <button class="btn btn-secondary" (click)="showRepos()">Repos<span class="badge"></span></button>
-                <button class="btn btn-secondary" (click)="showFollowers()">Followers <span class="badge"></span></button>
-                <button class="btn btn-secondary" (click)="showFollowing()">Following<span class="badge"></span></button>
+                <button class="btn btn-secondary" (click)="showRepos()">Repos<span class="badge">{{profile.repoNumber}}</span></button>
+                <button class="btn btn-secondary" (click)="showFollowers()">Followers <span class="badge">{{profile.followers}}</span></button>
+                <button class="btn btn-secondary" (click)="showFollowing()">Following<span class="badge">{{profile.following}}</span></button>
             </div>
             <hr>
-            <app-repo *ngIf="profile.showRepo"></app-repo>
+            <app-repo *ngIf="profile.showRepo" [details]="profile"></app-repo>
             <app-followers *ngIf="profile.showFollowers"></app-followers>
             <app-following *ngIf="profile.showFollowing"></app-following>
         </div>

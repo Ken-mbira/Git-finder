@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { User } from '../user';
+import { ProfileServiceService } from '../profile-http/profile-service.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -9,31 +10,40 @@ import { User } from '../user';
 })
 export class UserProfileComponent implements OnInit {
 
-  profile = new User("");
+  profile = new User("","",0,0,0,"");
+  userDetails: any;
 
-  searchUser(submitted){
-
-    if(submitted){
-      alert(this.profile.userName)
-    }
+  addNewUser(userInfo){
+    this.profileService.userMaker(userInfo.userName)
+      .subscribe(userData=>{
+        this.userDetails = userData
+        this.profile.userName = this.userDetails.name;
+        this.profile.bio = this.userDetails.bio;
+        this.profile.avatar = this.userDetails.avatar_url;
+        this.profile.followers = this.userDetails.followers;
+        this.profile.following = this.userDetails.following;
+        this.profile.repoNumber = this.userDetails.public_repos;
+        console.log(this.userDetails)
+      })
   }
+  
 
-  showRepos(){
+  showRepos() {
     this.profile.showRepo = true;
-    this.profile.showFollowers= false;
+    this.profile.showFollowers = false;
     this.profile.showFollowing = false;
   }
-  showFollowers(){
+  showFollowers() {
     this.profile.showRepo = false;
-    this.profile.showFollowers= true;
+    this.profile.showFollowers = true;
     this.profile.showFollowing = false;
   }
-  showFollowing(){
+  showFollowing() {
     this.profile.showRepo = false;
-    this.profile.showFollowers= false;
+    this.profile.showFollowers = false;
     this.profile.showFollowing = true;
   }
-  constructor() { }
+  constructor(private profileService: ProfileServiceService) { }
 
   ngOnInit(): void {
   }

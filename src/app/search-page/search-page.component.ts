@@ -8,7 +8,7 @@ import { User } from '../user';
 })
 export class SearchPageComponent implements OnInit {
 
-  profile = new User("")
+  profile = new User("","",0,0,0,"")
   constructor() { }
 
   ngOnInit(): void {

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit,Output, EventEmitter } from '@angular/core';
 import { User } from '../user';
 
 @Component({
@@ -7,14 +7,13 @@ import { User } from '../user';
   styleUrls: ['./extra-search.component.css']
 })
 export class ExtraSearchComponent implements OnInit {
+  newUser = new User("","",0,0,0,"");
+  @Output() submitted = new EventEmitter<User>();
 
-  @Input() user = new User("");
-
-  @Output() submitted = new EventEmitter<boolean>();
-
-  startSearch(submit:boolean){
-    this.submitted.emit(submit)
+  addUser(){
+    this.submitted.emit(this.newUser);
   }
+
   constructor(){
   }
 
