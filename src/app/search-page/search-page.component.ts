@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../user';
 
 @Component({
   selector: 'app-search-page',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPageComponent implements OnInit {
 
+  profile = new User("")
   constructor() { }
 
   ngOnInit(): void {

@@ -10,10 +10,10 @@ import { FooterComponent } from './footer/footer.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ExtraSearchComponent } from './extra-search/extra-search.component';
-import { ProfileComponent } from './profile/profile.component';
 import { RepoComponent } from './repo/repo.component';
 import { FollowersComponent } from './followers/followers.component';
 import { FollowingComponent } from './following/following.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -23,10 +23,10 @@ import { FollowingComponent } from './following/following.component';
     SearchPageComponent,
     NotFoundComponent,
     ExtraSearchComponent,
-    ProfileComponent,
     RepoComponent,
     FollowersComponent,
-    FollowingComponent
+    FollowingComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
