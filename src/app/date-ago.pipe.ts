@@ -9,7 +9,8 @@ export class DateAgoPipe implements PipeTransform {
     let today:Date = new Date();
     let todayWithNoTime:any = new Date(today.getFullYear(), today.getMonth(), today.getDate())
     var secondsAgo =  +todayWithNoTime - +new Date(value)
-    return secondsAgo
+    var daysAgo = Math.floor((secondsAgo/3600000)/24)
+    return daysAgo + " days ago"
   }
 
 }
