@@ -30,9 +30,10 @@ export class UserProfileComponent implements OnInit {
   followingDetails:any;
 
   addNewUser(userInfo){
-    this.showInfo = true;
+    this.showInfo = !this.showInfo;
     this.profileService.userMaker(userInfo.userName)
       .subscribe(userData=>{
+        this.profile.found = true;
         this.userDetails = userData
         this.profile.userName = this.userDetails.login;
         this.profile.bio = this.userDetails.bio;
@@ -40,7 +41,9 @@ export class UserProfileComponent implements OnInit {
         this.profile.followers = this.userDetails.followers;
         this.profile.following = this.userDetails.following;
         this.profile.repoNumber = this.userDetails.public_repos;
-      })
+      },error => {
+        this.profile.found = false
+      });
     this.profileService.repoMaker(userInfo.userName)
       .subscribe(repoData=>{
         this.repoDetails = repoData;
