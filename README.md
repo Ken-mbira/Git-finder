@@ -1,5 +1,5 @@
 # GitFinder
-![Image](./src/assets/working.png)
+<img src='src/assets/working.png'>
 This web application offers a simple way to access the users on github and see a summary of thier details. The user only has to enter the git-hub username of the person they wish to search for and the results will be shown to them, if the search is inconclusive the page will respond with a not-found page.
 
 ## Contributors
