@@ -15,6 +15,7 @@ import { FollowersComponent } from './followers/followers.component';
 import { FollowingComponent } from './following/following.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { HighlightDirective } from './highlight.directive';
+import { DateAgoPipe } from './date-ago.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HighlightDirective } from './highlight.directive';
     FollowersComponent,
     FollowingComponent,
     UserProfileComponent,
-    HighlightDirective
+    HighlightDirective,
+    DateAgoPipe
   ],
   imports: [
     BrowserModule,

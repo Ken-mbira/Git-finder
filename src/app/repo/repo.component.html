@@ -1,7 +1,7 @@
 <div appHighlight class="card" style="padding:1rem;" *ngFor="let item of repoInfo; let i = index">
     <h5 class="card-title">{{item.projectName}}</h5>
     <p class="card-text">{{item.description}}</p>
-    <p>Last updated:{{item.lastUpdated}}</p>
+    <p>Last updated:{{item.lastUpdated | dateAgo}}</p>
     <p>Language {{item.language}}</p>
     <a href={{item.link}}><button class="btn btn-outline-secondary">View in github<span class="badge badge-primary"><img src="../../assets/git2icon.png" width="25px"></span></button></a>
 </div>

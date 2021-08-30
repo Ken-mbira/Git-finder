@@ -15,6 +15,7 @@ export class UserProfileComponent implements OnInit {
 
   profile = new User("","",0,0,0,"");
   userDetails: any;
+  showInfo:boolean = false;
 
   repoInfo: Repository[] = [
     
@@ -29,6 +30,7 @@ export class UserProfileComponent implements OnInit {
   followingDetails:any;
 
   addNewUser(userInfo){
+    this.showInfo = true;
     this.profileService.userMaker(userInfo.userName)
       .subscribe(userData=>{
         this.userDetails = userData

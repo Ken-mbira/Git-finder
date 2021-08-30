@@ -1,7 +1,7 @@
 <div class="container">
     <app-extra-search (submitted)="addNewUser($event)"></app-extra-search>
     <app-not-found *ngIf="!profile.found"></app-not-found>
-    <div class="page-content">
+    <div class="page-content" *ngIf="showInfo">
         <div class="card">
             <div class="profile-pic">
                 <img src={{profile.avatar}} alt="user pic" style="max-width: 200px;">
