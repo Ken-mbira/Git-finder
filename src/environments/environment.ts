@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiKey: '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'
+  clientSecret: "097e329d366a8782ec851426a81c376b29292ab9",
+  clientId: "515d98aa8fa37ee53e7b"
 };
 
 /*
@@ -15,3 +16,4 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+ 
