@@ -12,17 +12,17 @@ export class ProfileServiceService {
   }
 
   userMaker(userName){
-    return this.http.get(`https://api.github.com/users/${userName}?access_token=${environment.apiKey}`)
+    return this.http.get(`https://api.github.com/users/${userName}?access_token=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`)
   }
   repoMaker(userName){
-      return this.http.get(`https://api.github.com/users/${userName}/repos?access_token=${environment.apiKey}`)
+      return this.http.get(`https://api.github.com/users/${userName}/repos?access_token=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`)
 
   }
   followerMaker(userName){
-      return this.http.get(`https://api.github.com/users/${userName}/follower?access_token=${environment.apiKey}`)
+      return this.http.get(`https://api.github.com/users/${userName}/follower?access_token=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`)
   }
   followingMaker(userName){
-      return this.http.get(`https://api.github.com/users/${userName}/following?access_token=${environment.apiKey}`)
+      return this.http.get(`https://api.github.com/users/${userName}/following?access_token=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`)
   }
 
 
