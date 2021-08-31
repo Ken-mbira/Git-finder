@@ -14,7 +14,7 @@ This web application offers a simple way to access the users on github and see a
 6. JavaScript
 
 ## Live link
-If you wish to see the following application in action click here
+If you wish to see the following application in action click [here](https://ken-mbira.github.io/Git-finder/)
 
 ## Known Bugs
 This application joins the following and followers dection when you search for a new user and so gives inconclusive data. If you feel that you can find a way around this, feel free to clone the repo and make any necessary changes
