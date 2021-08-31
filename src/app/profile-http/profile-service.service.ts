@@ -21,7 +21,7 @@ export class ProfileServiceService {
 
   }
   followerMaker(userName){
-      return this.http.get(`https://api.github.com/users/${userName}/follower?${this.clientId}&client_secret=${this.clientSecret}`)
+      return this.http.get(`https://api.github.com/users/${userName}/followers?${this.clientId}&client_secret=${this.clientSecret}`)
   }
   followingMaker(userName){
       return this.http.get(`https://api.github.com/users/${userName}/following?${this.clientId}&client_secret=${this.clientSecret}`)
